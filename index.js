@@ -13,7 +13,7 @@ const r = new snoowrap({
 });
 
 async function reddit() {
-    const object = lastPost === null ? { count: 1 } : { count: 1, after: lastPost };
+    const object = lastPost === null ? { limit: 1 } : { limit: 1, after: lastPost };
     r.getSubreddit("GarlicMarket").getNew().then(console.log);
 }
 
