@@ -1,6 +1,7 @@
 {
     "token": "",
-    "channel": "",
+    "channelNotification": "",
+    "botChannel": [""],
     "reddit": {
         "clientId": "",
         "clientSecret": "",
