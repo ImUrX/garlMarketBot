@@ -1,0 +1,38 @@
+{
+  "name": "garlmarketbot",
+  "version": "1.0.0",
+  "description": "Discord bot for the Garlic Market server",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ImUrX/garlMarketBot.git"
+  },
+  "keywords": [
+    "discord",
+    "bot",
+    "not",
+    "clean"
+  ],
+  "author": "ImUrX",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ImUrX/garlMarketBot/issues"
+  },
+  "homepage": "https://github.com/ImUrX/garlMarketBot#readme",
+  "dependencies": {
+    "bufferutil": "^3.0.3",
+    "discord.js": "github:hydrabolt/discord.js",
+    "erlpack": "github:hammerandchisel/erlpack",
+    "snekfetch": "^3.6.1",
+    "snoowrap": "^1.15.2"
+  },
+  "engines": {
+    "node": ">=8.5.0"
+  },
+  "devDependencies": {
+    "eslint": "^4.15.0"
+  }
+}

@@ -1,0 +1,10 @@
+{
+    "token": "",
+    "channel": "",
+    "reddit": {
+        "clientId": "",
+        "clientSecret": "",
+        "refreshToken": ""
+    },
+    "prefix": "m!"
+}
