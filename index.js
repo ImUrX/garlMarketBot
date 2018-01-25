@@ -17,7 +17,7 @@ async function reddit() {
     const listing = await r.getSubreddit("GarlicMarket").getNew(object);
     const json = JSON.stringify(listing);
     lastPost = json[0].name;
-    const embed = new Discord.RichEmbed()
+    const embed = new Discord.MessageEmbed()
         .setAuthor(json[0].author, null, `https://www.reddit.com/user/${json[0].author}`)
         .setTitle(json[0].title)
         .setURL(json[0].url)
