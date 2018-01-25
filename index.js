@@ -16,7 +16,13 @@ async function reddit() {
     const object = lastPost === null ? { limit: 1 } : { limit: 1, after: lastPost };
     const listing = await r.getSubreddit("GarlicMarket").getNew(object);
     const json = JSON.stringify(listing);
-    console.log(json)
+    lastPost = json[0].name;
+    const embed = new Discord.RichEmbed()
+        .setAuthor(json[0].author, null, `https://www.reddit.com/user/${json[0].author}`)
+        .setTitle(json[0].title)
+        .setURL(json[0].url)
+        .setDescription(json[0].selftext);
+    client.channels.get(config.channel).send("**New post at /r/GarlicMarket!**", { embed });
 }
 
 client.on("ready", () => {
