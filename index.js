@@ -47,7 +47,8 @@ const cmds = {
         return data.channel.send("**Statistics**", { embed });
     },
     "restart": async function (data) {
-        if(!data.guild || !data.member.permissions.has("MANAGE_GUILD")) return;
+        if(!data.guild) return;
+        if(!data.member.permissions.has("MANAGE_GUILD")) return;
         await data.channel.send("Restarting...");
         process.exit();
     },
