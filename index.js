@@ -1,6 +1,7 @@
 const config = require("./config.json");
 const Discord = require("discord.js");
 const snoowrap = require("snoowrap");
+let lastPost = null;
 
 const client = new Discord.Client();
 
@@ -12,6 +13,7 @@ const r = new snoowrap({
 });
 
 async function reddit() {
+    const object = lastPost === null ? { count: 1 } : { count: 1, after: lastPost };
     r.getSubreddit("GarlicMarket").getNew().then(console.log);
 }
 
