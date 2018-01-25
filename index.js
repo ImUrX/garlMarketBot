@@ -58,7 +58,7 @@ const cmds = {
 
 client.on("message", data => {
     if(!data.content.startsWith(config.prefix)) return;
-    const command = data.content.substr(1).split(" ");
+    const command = data.content.substr(config.prefix.length).split(" ");
     if (!(command[0] in cmds) || !(config.botChannel.includes(data.channel.guild.id))) return;
     cmds[command[0]](data, command[1]);
 });
