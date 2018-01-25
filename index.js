@@ -37,7 +37,7 @@ client.on("ready", () => {
 
 const cmds = {
     "botstats": function(data) {
-        const embed = new Discord.RichEmbed()
+        const embed = new Discord.MessageEmbed()
             .setColor("PURPLE")
             .addField("Uptime:", uptime(process.uptime()), true)
             .addField("Current RAM usage:", `${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)}MB`, true)
