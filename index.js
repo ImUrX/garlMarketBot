@@ -13,6 +13,11 @@ const r = new snoowrap({
 });
 
 async function reddit() {
+    if(lastPost !== null) {
+        const post = await r.getSubmission(lastPost.slice(3));
+        const datjson = JSON.parse(JSON.stringify(post));
+        if(!datjson[0]) lastPost = null;
+    }
     const object = lastPost === null ? { limit: 1 } : { limit: 1, before: lastPost };
     const listing = await r.getSubreddit("GarlicMarket").getNew(object);
     const json = JSON.parse(JSON.stringify(listing));
