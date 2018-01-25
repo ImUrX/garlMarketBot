@@ -13,12 +13,13 @@ const r = new snoowrap({
 });
 
 async function reddit() {
-    const object = lastPost === null ? { limit: 1 } : { limit: 1, after: lastPost };
+    const object = lastPost === null ? { limit: 1 } : { limit: 1, before: lastPost };
     const listing = await r.getSubreddit("GarlicMarket").getNew(object);
     const json = JSON.parse(JSON.stringify(listing));
     if(!json[0]) return;
     lastPost = json[0].name;
     const embed = new Discord.MessageEmbed()
+        .setColor("GREEN")
         .setAuthor(json[0].author, null, `https://www.reddit.com/user/${json[0].author}`)
         .setTitle(json[0].title)
         .setURL(json[0].url)
