@@ -25,10 +25,11 @@ async function reddit() {
         .setURL(json[0].url)
         .setDescription(json[0].selftext);
     client.channels.get(config.channel).send("**New post at /r/GarlicMarket!**", { embed });
+    console.log(`Sent a new message about ${json[0].title} with ID ${json[0].name}`);
 }
 
 client.on("ready", () => {
-    console.log("I am ready!");
+    console.log("I am ready to smell garlic!");
     client.setInterval(reddit, 20 * 1000);
 });
 
