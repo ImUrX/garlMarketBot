@@ -32,7 +32,7 @@ async function reddit() {
 
 client.on("ready", () => {
     console.log("I am ready to smell garlic!");
-    client.setInterval(reddit, 20 * 1000);
+    client.setInterval(reddit, 10 * 1000);
 });
 
 const cmds = {
@@ -51,6 +51,9 @@ const cmds = {
         if(!data.member.permissions.has("MANAGE_GUILD")) return;
         await data.channel.send("Restarting...");
         process.exit();
+    },
+    "donate": function (data) {
+        data.channel.send("Donate to my wallet pls 🎆❤GTgGkKec4CWVTTQgJDQ8taN9YqxE4oNK3a❤🎆");
     },
     "help": function (data) {
         data.channel.send("**Commands**: " + Object.keys(cmds).join(", "));
